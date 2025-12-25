@@ -1,55 +1,34 @@
-# Prerequisites
-*.d
-
-# Object files
+# --- C Build Artifacts ---
+# Object files (intermediate compilation)
 *.o
-*.ko
-*.obj
-*.elf
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
+# Libraries (if you build them later)
 *.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
 *.so
-*.so.*
-*.dylib
 
-# Executables
-*.exe
+# Executables (Add specific names as you create projects)
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+*.exe
+main
+server
+client
+mystring_test
+leaky_bucket
+hex_tool
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Debugger Core Dumps (Valgrind or GDB crashes)
+core
+vgcore.*
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# --- OS System Files ---
+.DS_Store
+.DS_Store?
+._*
 
-# debug information files
-*.dwo
+# --- VS Code & Environment ---
+# Ignore local user settings, but keep .devcontainer!
+.vscode/
+
+# If you use C++ intellisense cache
+.app/
+.clang/
