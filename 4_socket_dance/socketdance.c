@@ -36,14 +36,19 @@ int main() {
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(8888);
 
-    bind(server_fd, (struct sockaddr *)&address, sizeof(address));
+    if ((bind(server_fd, (struct sockaddr *)&address, sizeof(address))) == -1) {
+        perror("bind failed.");
+        return 1;
+    }
+
     listen(server_fd, 10);
 
     while(1) {
         socklen_t addrlen = sizeof(address);
         int new_socket = accept(server_fd, (struct sockaddr *)&address, &addrlen);
+        printf("Client connected.\n");
         char buffer[1024];
-         
+        
         while(1) {
             int client_read = read(new_socket, buffer, 1024);
 
@@ -58,7 +63,8 @@ int main() {
             write(new_socket, buffer, client_read);
         }
         close(new_socket);
+        printf("Socket closed.\n");
     }
 
-    return 0
+    return 0;
 }

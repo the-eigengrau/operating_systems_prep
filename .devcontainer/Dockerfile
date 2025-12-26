@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     man-db \
     vim \
     net-tools \
+    netcat-openbsd \    
     curl \
     python3 \
     && rm -rf /var/lib/apt/lists/*
