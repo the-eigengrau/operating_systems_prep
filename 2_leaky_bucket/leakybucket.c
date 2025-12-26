@@ -1,3 +1,20 @@
+/*
+
+Project 2: The leaky_bucket.c
+Goal: Master malloc, free, and valgrind. Concepts: Heap memory, struct pointers, memory leaks. The Project: GIOS requires you to manage memory manually. If you leak memory in long-running servers, you fail.
+
+Define a struct Student with a generic ID and a name (char pointer).
+
+Write a function that allocates a Student and their name on the heap (malloc).
+
+Write a main loop that creates 100 students and prints them.
+
+The Catch: Intentionally forget to free() the memory. Run it with valgrind --leak-check=full ./a.out inside your container to see the error.
+
+The Fix: Fix the code to properly free both the struct and the name. Get Valgrind to report "0 bytes in 0 blocks" lost.
+
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

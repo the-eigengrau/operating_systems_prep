@@ -1,3 +1,18 @@
+/*
+
+Project 1: The "Manual" String Library
+Goal: Understand pointers, array decay, and null terminators. Concepts: char*, pointer arithmetic, \0. The Project: Python handles strings automatically. In C, a string is just an array of bytes ending in a null byte.
+
+Create mystring.c.
+
+Implement your own version of strlen (string length) and strcpy (string copy) without using <string.h>.
+
+Constraint: You cannot use array indexing (e.g., str[i]). You must use pointer arithmetic (e.g., *str, str++).
+
+Test: Write a main function that tests these against the real versions.
+
+*/
+
 #include <stdio.h>
 #include <string.h>
 

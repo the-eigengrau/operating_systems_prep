@@ -1,3 +1,19 @@
+/*
+
+Project 3: The "Syscall" File Copy
+
+Goal: Understand File Descriptors vs. File Pointers. Concepts: open, read, write (System Calls) vs fopen, fread (Standard Lib). The Project: In OS code, you often use raw system calls (unbuffered) rather than standard libraries.
+
+Write a program mycp that copies a binary file from Source to Dest.
+
+Use open(), read(), and write() (include <unistd.h> and <fcntl.h>).
+
+Create a buffer of 1024 bytes. Read into the buffer, write out from the buffer.
+
+Crucial logic: Handle the case where read returns fewer bytes than requested (partial reads)—this logic is identical to reading network packets later.
+
+*/
+
 #include <stdio.h>  
 #include <fcntl.h> 
 #include <unistd.h> 
