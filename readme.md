@@ -15,7 +15,7 @@ Designed as preparation for **CS 6200: Graduate Introduction to Operating System
 
 **Phase 2: OS Primitives**
 * [4_socket_dance](#04_tcp_echo_server): Socket Lifecycle (`bind`/`listen`/`accept`)
-* [4.5_multi_socket_dance](#04_tcp_echo_server): Socket Lifecycle (`bind`/`listen`/`accept`)
+* [4b_multi_socket_dance](#04_tcp_echo_server): Socket Lifecycle (`bind`/`listen`/`accept`)
 * [5_race_condition](#05_race_condition): Threading Risks & Mutexes
 * [6_boss_worker_queue](#06_boss_worker_queue): Producer-Consumer & Condition Variables
 * [7_shared_memory](#07_shared_memory): `mmap` & Semaphores
