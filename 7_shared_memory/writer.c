@@ -35,4 +35,28 @@ Why this is "Intro to OS" Gold: This breaks the mental model that "variables are
 
 */
 
-//int shm_fd = shm_open(const char *name, O_WRONLY|O_CREAT, mode_t mode)
+#include <stdio.h>      
+#include <stdlib.h>     
+#include <string.h>     
+#include <unistd.h>     
+#include <sys/types.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <semaphore.h>
+
+int main(){
+    int shm_fd = shm_open("/my_shm", O_RDWR|O_CREAT, 0666);
+    sem_t *sem_read = sem_open("/sem_read", O_CREAT, 0666, 0);
+    sem_t *sem_write = sem_open("/sem_write", O_CREAT, 0666, 1);
+    ftruncate(shm_fd, sizeof(int));
+    int * ptr = mmap(NULL, sizeof(int), PROT_READ|PROT_WRITE, MAP_SHARED,shm_fd,0); 
+    while(1) {
+        sem_wait(sem_write);
+        int random = rand() % 100;
+        *ptr = random;
+        printf("Random number is %d.\n", *ptr);
+        sem_post(sem_read);
+        sleep(1);
+
+    }
+}
