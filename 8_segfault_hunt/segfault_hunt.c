@@ -18,6 +18,7 @@ Use gdb core or gdb ./a.out to find exactly which line crashed and print the var
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void trigger_crash(int *ptr) {
     // Attempting to write to a NULL pointer
@@ -25,8 +26,11 @@ void trigger_crash(int *ptr) {
 }
 
 void wrapper_function() {
-    int *dangerous_ptr = NULL;
-    trigger_crash(dangerous_ptr);
+    //int *dangerous_ptr = NULL;
+    int *safe_ptr = malloc(sizeof(int));
+    //trigger_crash(dangerous_ptr);
+    trigger_crash(safe_ptr);
+    free(safe_ptr);
 }
 
 int main() {
