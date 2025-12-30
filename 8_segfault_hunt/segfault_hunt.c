@@ -16,3 +16,22 @@ Run it, let it crash.
 Use gdb core or gdb ./a.out to find exactly which line crashed and print the variables at that moment.
 
 */
+
+#include <stdio.h>
+
+void trigger_crash(int *ptr) {
+    // Attempting to write to a NULL pointer
+    *ptr = 100; 
+}
+
+void wrapper_function() {
+    int *dangerous_ptr = NULL;
+    trigger_crash(dangerous_ptr);
+}
+
+int main() {
+    printf("Program starting...\n");
+    wrapper_function();
+    printf("Program finished (we won't see this).\n");
+    return 0;
+}
