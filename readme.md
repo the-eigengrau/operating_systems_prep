@@ -31,28 +31,6 @@ Designed as preparation for **CS 6200: Graduate Introduction to Operating System
 * [13_signal_handler](#13_signal_handler): Graceful Shutdowns (`SIGINT`)
 * [14_mini_shell](#14_mini_shell): `fork`, `exec`, & Process Management
 * [15_shm_ring_buffer](#15_shm_ring_buffer): High-Performance IPC
-* [16_simple_proxy](#16_simple_proxy): Managing Multiple Sockets
-
-**Phase 5: Distributed Basics**
-* [17_simple_rpc](#17_simple_rpc): Remote Procedure Calls & Marshalling
-
----
-
-## 🛠 Environment
-
-This repository uses a **Dev Container** configuration to ensure code behaves exactly as it would on a course grading server (x86 Linux), even if you are developing on an Apple Silicon (M1/M2/M3) Mac.
-
-### 1. Install Tools
-1.  **[OrbStack](https://orbstack.dev/)** (Recommended for macOS) or Docker Desktop.
-2.  **[VS Code](https://code.visualstudio.com/)**.
-3.  **Dev Containers Extension** for VS Code (ms-vscode-remote.remote-containers).
-
-### 2. How to Start
-1.  Clone this repository.
-2.  Open the folder in VS Code.
-3.  You should see a pop-up: *"Folder contains a Dev Container configuration file. Reopen to develop in a container."* Click **Reopen in Container**.
-    * *If you miss it: Press `Cmd+Shift+P` -> "Dev Containers: Reopen in Container".*
-4.  Wait for the build. Once finished, opening a terminal in VS Code (`Ctrl + ~`) will give you an **x86 Ubuntu 20.04** shell with `gcc`, `gdb`, `valgrind`, and `make` pre-installed.
 
 ---
 
